@@ -12,9 +12,9 @@
 @import url('./base/section.css');
 
 /* @import url('./layout/header.css');
+@import url('./layout/mobile-menu.css');
 @import url('./layout/hero.css');
 @import url('./layout/about-me.css');
-@import url('./layout/about-accordion.css');
 
 @import url('./layout/benefits.css');
 @import url('./layout/projects.css');
@@ -22,4 +22,5 @@
 @import url('./layout/covers.css');
 @import url('./layout/reviews.css'); */
 @import url('./layout/footer.css');
-@import url('./layout/mobile-menu.css');
+@import url('./layout/modal-window.css');
+
