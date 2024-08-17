@@ -6,11 +6,5 @@
   --button-hover: #e0373f;
   --main-text: #fff;
   --success: #3cbc81;
-  --error: #e74a3b;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --error: #e74a3b;  
 }
