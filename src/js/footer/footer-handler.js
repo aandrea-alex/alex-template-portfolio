@@ -1,9 +1,10 @@
 import { createErrMsg, createOkMsg } from '../helpers/create-msg';
+import { setupInputHandlers } from './custom-input-handle';
+
 import modalCreate from '../modal-window/modal-window-create';
 import validateEmail from './validate-email';
 import { axiosInst } from '../helpers/api';
 import {
-  ERROR_FETCH,
   WRONG_EMAIL,
   NO_COMMENT,
   NO_EMAIL,
@@ -23,11 +24,11 @@ const successEmailSpanRef = document.querySelector('.footer-email-success');
 
 formRef && formRef.addEventListener('submit', handleSendMessage);
 
-console.log(emailInputRef);
-
-emailInputRef && emailInputRef.addEventListener('input', changeContolsStatus);
-commentInputRef &&
-  commentInputRef.addEventListener('input', changeContolsStatus);
+emailInputRef && emailInputRef.addEventListener('input', changeInputsStyle);
+commentInputRef && commentInputRef.addEventListener('input', changeInputsStyle);
+commentInputRef && commentInputRef.addEventListener('input', changeBtnStatus);
+emailInputRef.addEventListener('keydown', removeInputsMessages);
+emailInputRef.addEventListener('focus', removeInputsMessages);
 
 async function handleSendMessage(event) {
   event.preventDefault();
@@ -35,12 +36,14 @@ async function handleSendMessage(event) {
   const emailValue = emailInputRef.value.trim();
   if (!emailValue) {
     errEmailSpanRef && errEmailSpanRef.classList.add('visible');
+    emailInputRef && emailInputRef.classList.add('error');
     createErrMsg(NO_EMAIL);
     return;
   }
   const commentValue = commentInputRef.value.trim();
   if (!commentValue) {
     errCommentSpanRef && errCommentSpanRef.classList.add('visible');
+    commentInputRef && commentInputRef.classList.add('error');
     createErrMsg(NO_COMMENT);
     return;
   }
@@ -48,6 +51,7 @@ async function handleSendMessage(event) {
   if (!validateEmail(emailValue)) {
     createErrMsg(WRONG_EMAIL);
     errEmailSpanRef && errEmailSpanRef.classList.add('visible');
+    emailInputRef && emailInputRef.classList.add('error');
     return;
   }
 
@@ -65,23 +69,38 @@ async function handleSendMessage(event) {
         openModalWindow();
         formRef.reset();
         successEmailSpanRef && successEmailSpanRef.classList.add('visible');
+        emailInputRef && emailInputRef.classList.add('success');
       }
     }
   } catch (error) {
     errEmailSpanRef && errEmailSpanRef.classList.add('visible');
-    console.log(error.message);
+    emailInputRef && emailInputRef.classList.add('error');
   } finally {
-    changeContolsStatus();
+    changeBtnStatus();
   }
 }
 
-function changeContolsStatus() {
-  errEmailSpanRef && errEmailSpanRef.classList.remove('visible');
-  errCommentSpanRef && errCommentSpanRef.classList.remove('visible');
-  successEmailSpanRef && successEmailSpanRef.classList.remove('visible');
-
+function changeBtnStatus() {
   footerBtn.disabled =
     !emailInputRef.value.trim() || !commentInputRef.value.trim();
 }
 
-changeContolsStatus();
+
+function changeInputsStyle() {
+  errEmailSpanRef && errEmailSpanRef.classList.remove('visible');
+  errCommentSpanRef && errCommentSpanRef.classList.remove('visible'); 
+  emailInputRef && emailInputRef.classList.remove('error');  
+  commentInputRef && commentInputRef.classList.remove('error');
+}
+
+function removeInputsMessages() {
+  errEmailSpanRef && errEmailSpanRef.classList.remove('visible');
+  errCommentSpanRef && errCommentSpanRef.classList.remove('visible');
+  successEmailSpanRef && successEmailSpanRef.classList.remove('visible'); 
+  emailInputRef && emailInputRef.classList.remove('error'); 
+  commentInputRef && commentInputRef.classList.remove('error'); 
+  emailInputRef && emailInputRef.classList.remove('success'); 
+}
+
+
+changeBtnStatus();
