@@ -26,6 +26,7 @@ formRef && formRef.addEventListener('submit', handleSendMessage);
 
 emailInputRef && emailInputRef.addEventListener('input', changeInputsStyle);
 commentInputRef && commentInputRef.addEventListener('input', changeInputsStyle);
+emailInputRef && emailInputRef.addEventListener('input', changeBtnStatus);
 commentInputRef && commentInputRef.addEventListener('input', changeBtnStatus);
 emailInputRef.addEventListener('keydown', removeInputsMessages);
 emailInputRef.addEventListener('focus', removeInputsMessages);
