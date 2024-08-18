@@ -1,13 +1,33 @@
+let maxLength = getMaxLengthForViewport();
+const atributeName = 'data-original';
 
-const maxLength = 30;
-
-export function setupInputHandlers() {
+export function setupCustomInputHandlers() {
   const customInputsRef = document.querySelectorAll('.js-custom-input');
   customInputsRef.forEach(input => {
     input.addEventListener('change', handleChange);
     input.addEventListener('focus', handleFocus);
     input.addEventListener('blur', handleBlur);
   });
+  window.addEventListener('resize', () => {
+    maxLength = getMaxLengthForViewport();
+  });
+}
+
+export function getCustomInputValue(input) {
+  let res = '';
+  if (!input) return res;
+  if (input.hasAttribute(atributeName)) {
+    res = input.dataset.original;
+    if (!res) res = input.value.trim();
+  } else res = input.value.trim();
+  return res;
+}
+
+export function resetCustomInputValue(input) {
+  if (!input) return;
+  if (input.hasAttribute(atributeName)) {
+    input.dataset.original = '';
+  }
 }
 
 function truncateText(text, maxLength) {
@@ -18,32 +38,39 @@ function truncateText(text, maxLength) {
 }
 
 function handleChange(event) {
-    const input = event.target; 
-    const currentText = input.value;
-    const originalText = input.getAttribute('data-original-text');
-    if  (originalText) {
-        input.setAttribute('data-original-text', currentText);
-    }     
-    if (currentText.length > maxLength) {
-      input.value = truncateText(currentText, maxLength);
-    }
+  const input = event.target;
+  const currentText = input.value.trim();
+  if (input.hasAttribute(atributeName)) {
+    input.dataset.original = currentText;
   }
-  
-  function handleFocus(event) {
-    const input = event.target;
-    const originalText = input.getAttribute('data-original-text');
-    if (originalText) {
-      input.value = originalText;
-    }
+  if (currentText.length > maxLength) {
+    input.value = truncateText(currentText, maxLength);
   }
+}
 
-  function handleBlur(event) {
-    const input = event.target;   
-    const originalText = input.getAttribute('data-original-text');
-    if  (originalText) {
-        input.setAttribute('data-original-text', currentText);
-    }     
-    if (currentText.length > maxLength) {
-      input.value = truncateText(currentText, maxLength);
-    }
+function handleFocus(event) {
+  const input = event.target;
+  if (input.hasAttribute(atributeName)) {
+    input.value = input.dataset.original;
   }
+}
+
+function handleBlur(event) {
+  const input = event.target;
+  const currentText = input.value;
+  if (currentText.length > maxLength) {
+    input.value = truncateText(currentText, maxLength);
+  }
+}
+
+function getMaxLengthForViewport() {
+  const viewportWidth = window.innerWidth;
+
+  if (viewportWidth < 768) {
+    return 45;
+  } else if (viewportWidth < 1440) {
+    return 28;
+  } else {
+    return 49;
+  }
+}
