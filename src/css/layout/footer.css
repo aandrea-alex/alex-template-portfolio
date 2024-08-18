@@ -295,7 +295,7 @@
 
   .footer-container {
     /* background-image: url('/img/footer/bgr-desktop@1x.webp'); */
-    background-image: url('/img/covers/cover-desktopt@1x.webp');
+    background-image: url('/img/covers/cover-desktop@1x.webp');
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 400px 636px;
@@ -317,6 +317,6 @@
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .footer-container {
     /* background-image: url('/img/footer/bgr-desktop@2x.webp'); */
-    background-image: url('/img/covers/cover-desktopt@2x.webp');
+    background-image: url('/img/covers/cover-desktop@2x.webp');
   }
 }
