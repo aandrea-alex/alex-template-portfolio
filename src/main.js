@@ -3,4 +3,6 @@ import './js/header/mobile-menu-handler';
 import './js/about-me/accordion-handler';
 import './js/about-me/swiper-handler';
 
+import './js/projects/projects-handler';
+
 import './js/footer/footer-handler';

@@ -9,7 +9,7 @@
 @import url('./base/reset.css');
 @import url('./base/common.css');
 @import url('./base/container.css');
-@import url('./base/section.css');
+@import url('./base/custom-buttons.css');
 
 @import url('./layout/header.css');
 @import url('./layout/mobile-menu.css');
@@ -18,7 +18,7 @@
 @import url('./layout/about-accordion.css');
 
 /* @import url('./layout/benefits.css'); */
-/* @import url('./layout/projects.css'); */
+@import url('./layout/projects.css');
 /* @import url('./layout/faq.css'); */
 /* @import url('./layout/covers.css'); */
 /* @import url('./layout/reviews.css'); */
