@@ -39,8 +39,8 @@ import{A as N,S as L,N as y,i as O,a as oe}from"./assets/vendor-CN-mpBkS.js";(fu
           </picture>
         </div>
       </li>
-      `,"")}const ce=async(e,t)=>{const s=ne(e);t.innerHTML="",t.insertAdjacentHTML("beforeend",s)},ie="/alex-template-portfolio/assets/project01@1x-Ye2u9QvY.webp",ae="/alex-template-portfolio/assets/project01@2x-CGnU-NZM.webp",le="/alex-template-portfolio/assets/project02@1x-dj219-w_.webp",ue="/alex-template-portfolio/assets/project02@2x-R_GplPUq.webp",de="/alex-template-portfolio/assets/project03@1x-CuhbSDYE.webp",pe="/alex-template-portfolio/assets/project03@2x-DFdgcKJ5.webp",me="/alex-template-portfolio/assets/project04@1x-Doff4Zlc.webp",fe="/alex-template-portfolio/assets/project04@2x-D8suiMQa.webp",ve="/alex-template-portfolio/assets/project05@1x-NId4RxqZ.webp",ge="/alex-template-portfolio/assets/project05@2x-wvuiV8Po.webp",we="/alex-template-portfolio/assets/project06@1x-C_lFZmue.webp",be="/alex-template-portfolio/assets/project06@2x-DCqSTG3_.webp",xe="/alex-template-portfolio/assets/project07@1x-B3QnrJNm.webp",he="/alex-template-portfolio/assets/project07@2x-C0-TBLLl.webp",je="/alex-template-portfolio/assets/project08@1x-4Vi569Pq.webp",Le="/alex-template-portfolio/assets/project08@2x-DDEYTNWW.webp",ye="/alex-template-portfolio/assets/project09@1x-BaB1ldRA.webp",Se="/alex-template-portfolio/assets/project09@2x-uHr6DaSI.webp",W=[{url1x:ie,url2x:ae},{url1x:le,url2x:ue},{url1x:de,url2x:pe},{url1x:me,url2x:fe},{url1x:ve,url2x:ge},{url1x:we,url2x:be},{url1x:xe,url2x:he},{url1x:je,url2x:Le},{url1x:ye,url2x:Se}];let v;const G=document.querySelector(".projects-list");G&&Ee();async function Ee(){try{await ce(W,G),v=new L(".projects-swiper-container",{modules:[y],slidesPerView:1,spaceBetween:0,loop:!1,navigation:{nextEl:".projects-btn-next",prevEl:".projects-btn-prev"},on:{init:C,slideChange:C},touchEventsTarget:"wrapper",simulateTouch:!0,touchRatio:1,touchAngle:45})}catch(e){console.log(e.message)}}function C(){if(!v)return;const e=document.querySelector(".projects-btn-prev"),t=document.querySelector(".projects-btn-next");v.isBeginning?e.disabled=!0:e.disabled=!1,v.isEnd?t.disabled=!0:t.disabled=!1}function Me(e=[]){const t=(n=0)=>[...e.slice(n),...e.slice(0,n)].reduce((te,{url1x:E,url2x:se})=>te+`        
-          <picture>
+      `,"")}const ce=async(e,t)=>{const s=ne(e);t.innerHTML="",t.insertAdjacentHTML("beforeend",s)},ie="/alex-template-portfolio/assets/project01@1x-Ye2u9QvY.webp",ae="/alex-template-portfolio/assets/project01@2x-CGnU-NZM.webp",le="/alex-template-portfolio/assets/project02@1x-dj219-w_.webp",ue="/alex-template-portfolio/assets/project02@2x-R_GplPUq.webp",de="/alex-template-portfolio/assets/project03@1x-CuhbSDYE.webp",pe="/alex-template-portfolio/assets/project03@2x-DFdgcKJ5.webp",me="/alex-template-portfolio/assets/project04@1x-Doff4Zlc.webp",fe="/alex-template-portfolio/assets/project04@2x-D8suiMQa.webp",ve="/alex-template-portfolio/assets/project05@1x-NId4RxqZ.webp",ge="/alex-template-portfolio/assets/project05@2x-wvuiV8Po.webp",we="/alex-template-portfolio/assets/project06@1x-C_lFZmue.webp",be="/alex-template-portfolio/assets/project06@2x-DCqSTG3_.webp",xe="/alex-template-portfolio/assets/project07@1x-B3QnrJNm.webp",he="/alex-template-portfolio/assets/project07@2x-C0-TBLLl.webp",je="/alex-template-portfolio/assets/project08@1x-4Vi569Pq.webp",Le="/alex-template-portfolio/assets/project08@2x-DDEYTNWW.webp",ye="/alex-template-portfolio/assets/project09@1x-BaB1ldRA.webp",Se="/alex-template-portfolio/assets/project09@2x-uHr6DaSI.webp",W=[{url1x:ie,url2x:ae},{url1x:le,url2x:ue},{url1x:de,url2x:pe},{url1x:me,url2x:fe},{url1x:ve,url2x:ge},{url1x:we,url2x:be},{url1x:xe,url2x:he},{url1x:je,url2x:Le},{url1x:ye,url2x:Se}];let v;const G=document.querySelector(".projects-list");G&&Ee();async function Ee(){try{await ce(W,G),v=new L(".projects-swiper-container",{modules:[y],slidesPerView:1,spaceBetween:0,loop:!1,navigation:{nextEl:".projects-btn-next",prevEl:".projects-btn-prev"},on:{init:C,slideChange:C},touchEventsTarget:"wrapper",simulateTouch:!0,touchRatio:1,touchAngle:45})}catch(e){console.log(e.message)}}function C(){if(!v)return;const e=document.querySelector(".projects-btn-prev"),t=document.querySelector(".projects-btn-next");v.isBeginning?e.disabled=!0:e.disabled=!1,v.isEnd?t.disabled=!0:t.disabled=!1}function Me(e=[]){const t=(n=0)=>[...e.slice(n),...e.slice(0,n)].reduce((te,{url1x:E,url2x:se})=>te+`<li>        
+          <picture covers-marquee-picture>
             <source
               srcset="
                 ${E} 1x,
@@ -49,17 +49,17 @@ import{A as N,S as L,N as y,i as O,a as oe}from"./assets/vendor-CN-mpBkS.js";(fu
               type="image/webp"
             />
             <img
-              class="cover-marquee-img"
+              class="covers-marquee-img"
               src="${E}"
               alt="Project image"
             />
           </picture>
-      
-        `,""),s=t(0),c=t(3),o=t(6);return`
-    <div class="cover-marquee-inner">
-      <div class="cover-marquee-line">${s}</div>
-      <div class="cover-marquee-line">${c}</div>
-      <div class="cover-marquee-line">${o}</div>
+        </li>
+        `,""),s=t(0),c=t(2),o=t(4);return`
+    <div class="covers-marquee-inner">
+      <ul class="covers-marquee-line">${s}</ul>
+      <ul class="covers-marquee-line">${c}</ul>
+      <ul class="covers-marquee-line">${o}</ul>
     </div>
   `}const qe=async(e,t)=>{const s=Me(e);t.innerHTML="",t.insertAdjacentHTML("beforeend",s)},Pe=document.querySelector(".covers-marquee");qe(W,Pe);function ke(e=[]){return!e||e.length===0?"":e.reduce((t,{_id:s,author:c="Anonymous",avatar_url:o="default-avatar.png",review:n="No review provided"})=>t+`
        <li class="reviews-list-item swiper-slide" id="review-${s}">
