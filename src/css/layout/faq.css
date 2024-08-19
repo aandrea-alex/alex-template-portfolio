@@ -46,8 +46,7 @@
   border-radius: 100px;
   width: 34px;
   height: 34px;
-  padding-top: 7px;
-  font-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   outline: none;

@@ -30,8 +30,7 @@
   border-radius: 100px;
   width: 36px;
   height: 36px;
-  padding-top: 9px;
-  font-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   outline: none;
