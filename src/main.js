@@ -5,5 +5,5 @@ import './js/about-me/swiper-handler';
 import './js/faq/faq-handler';
 import './js/projects/projects-handler';
 import './js/covers/covers-handler';
-
+import './js/reviews/reviews-handler';
 import './js/footer/footer-handler';
