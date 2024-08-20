@@ -11,7 +11,6 @@ async function getReviews() {
   try {
     const response = await axiosInst.get('reviews');
     if (response && response.status === 200) {
-      console.log('STATUS', response.status);
       const reviewsListLen = response.data?.length;
 
       if (!reviewsListLen) {
