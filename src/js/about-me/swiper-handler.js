@@ -9,6 +9,8 @@ const swiper = new Swiper('.about-skills-container', {
   navigation: {
     nextEl: '.about-arrow-btn-next',
   },
+  speed: 700,
+  effect: 'coverflow', // ('slide', 'fade', 'cube', 'coverflow', '')
   breakpoints: {
     768: {
       slidesPerView: 3,
