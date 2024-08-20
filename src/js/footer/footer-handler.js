@@ -62,7 +62,6 @@ async function handleSendMessage(event) {
   }
 
   const bodyRequest = { email: emailValue, comment: commentValue };
-  console.log(bodyRequest);
 
   try {
     const response = await axiosInst.post('requests', bodyRequest);
