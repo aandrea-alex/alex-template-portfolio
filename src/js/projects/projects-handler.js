@@ -21,6 +21,8 @@ async function initializeProjectsList() {
         nextEl: '.projects-btn-next',
         prevEl: '.projects-btn-prev',
       },
+      speed: 1000,
+      effect: 'coverflow', // ('slide', 'fade', 'cube', 'coverflow', '')
       on: {
         init: updateNavigationState,
         slideChange: updateNavigationState,

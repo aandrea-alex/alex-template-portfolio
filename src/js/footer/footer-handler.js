@@ -1,4 +1,5 @@
 import { createErrMsg, createOkMsg } from '../helpers/create-msg';
+import { customScrollToElement } from '../helpers/scroll';
 import {
   setupCustomInputHandlers,
   getCustomInputValue,
@@ -20,39 +21,43 @@ const footerBtn = document.querySelector('.footer-button');
 const errEmailSpanRef = document.querySelector('.footer-email-error');
 const errCommentSpanRef = document.querySelector('.footer-comment-error');
 
+const scrollUpBtn = document.querySelector('.js-footer-scroll-up');
+if (scrollUpBtn) {
+  scrollUpBtn.addEventListener('click', () => {
+    customScrollToElement('id-hero', 3000);
+  });
+}
+
 const successEmailSpanRef = document.querySelector('.footer-email-success');
 
 formRef && formRef.addEventListener('submit', handleSendMessage);
 
-emailInputRef && emailInputRef.addEventListener('input', changeInputsStyle);
-commentInputRef && commentInputRef.addEventListener('input', changeInputsStyle);
-emailInputRef && emailInputRef.addEventListener('input', changeBtnStatus);
-commentInputRef && commentInputRef.addEventListener('input', changeBtnStatus);
-emailInputRef.addEventListener('keydown', removeInputsMessages);
-emailInputRef.addEventListener('focus', removeInputsMessages);
+const inputFields = [emailInputRef, commentInputRef];
+inputFields.forEach(input => {
+  if (input) {
+    input.addEventListener('input', changeInputsStyle);
+    input.addEventListener('input', changeBtnStatus);
+    input.addEventListener('keydown', removeInputsMessages);
+    input.addEventListener('focus', removeInputsMessages);
+  }
+});
 
 async function handleSendMessage(event) {
   event.preventDefault();
 
   const emailValue = getCustomInputValue(emailInputRef);
   if (!emailValue) {
-    errEmailSpanRef && errEmailSpanRef.classList.add('visible');
-    emailInputRef && emailInputRef.classList.add('error');
-    createErrMsg(NO_EMAIL);
+    showError(errEmailSpanRef, emailInputRef, NO_EMAIL);
     return;
   }
   const commentValue = getCustomInputValue(commentInputRef);
   if (!commentValue) {
-    errCommentSpanRef && errCommentSpanRef.classList.add('visible');
-    commentInputRef && commentInputRef.classList.add('error');
-    createErrMsg(NO_COMMENT);
+    showError(errCommentSpanRef, commentInputRef, NO_COMMENT);
     return;
   }
 
   if (!validateEmail(emailValue)) {
-    createErrMsg(WRONG_EMAIL);
-    errEmailSpanRef && errEmailSpanRef.classList.add('visible');
-    emailInputRef && emailInputRef.classList.add('error');
+    showError(errEmailSpanRef, emailInputRef, WRONG_EMAIL);
     return;
   }
 
@@ -77,8 +82,7 @@ async function handleSendMessage(event) {
       }
     }
   } catch (error) {
-    errEmailSpanRef && errEmailSpanRef.classList.add('visible');
-    emailInputRef && emailInputRef.classList.add('error');
+    showError(errEmailSpanRef, emailInputRef, WRONG_EMAIL);
   } finally {
     changeBtnStatus();
   }
@@ -103,6 +107,12 @@ function removeInputsMessages() {
   emailInputRef && emailInputRef.classList.remove('error');
   commentInputRef && commentInputRef.classList.remove('error');
   emailInputRef && emailInputRef.classList.remove('success');
+}
+
+function showError(spanRef, inputRef, message) {
+  spanRef && spanRef.classList.add('visible');
+  inputRef && inputRef.classList.add('error');
+  createErrMsg(message);
 }
 
 changeBtnStatus();

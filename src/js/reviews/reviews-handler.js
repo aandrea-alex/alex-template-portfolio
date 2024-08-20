@@ -26,6 +26,8 @@ getReviewsList()
           spaceBetween: 16,
         },
       },
+      speed: 700,
+      effect: 'coverflow', // ('slide', 'fade', 'cube', 'coverflow', '')
       on: {
         init: updateNavigationState,
         slideChange: updateNavigationState,
