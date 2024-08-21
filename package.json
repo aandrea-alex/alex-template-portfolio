@@ -1,5 +1,5 @@
 {
-  "name": "alex-portfolio",
+  "name": "team-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +12,7 @@
     "vite": "^5.3.5",
     "glob": "^8.1.0"
   },
-  "author": "Andrea Alexandrov <andrea.alexandrov.67@gmail.com>",
+  "author": "Andrea Alexandrov and team-11 <andrea.alexandrov.67@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "accordion-js": "^3.3.4",
