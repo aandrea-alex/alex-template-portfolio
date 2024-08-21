@@ -5,7 +5,6 @@
 .projects-swiper-container {
   width: 100%;
 }
-
 .projects-title {
   font-weight: 600;
   font-size: 16px;
@@ -51,10 +50,9 @@
 }
 
 .projects-lang-item {
-  border: 1px solid rgba(28, 29, 32, 0.2);
+  border: 1px solid rgba(28, 29, 32, 0.4);
   border-radius: 60px;
-  padding: 18px;
-  height: 45px;
+  padding: 13px 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +61,7 @@
 .projects-lang-item-text {
   font-weight: 500;
   font-size: 16px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.32px;
   color: var(--background);
 }
 
@@ -88,18 +86,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--button-text);
+  background: #ed3b44;;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
-  color: var(--main-text);
-  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #fafafa;
+  transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects-button:hover,
-.projects-button:focus {
-  background-color: var(--button-hover);
-  cursor: pointer;
+.project-link:hover {
+  background: #E0373F;
 }
 
 .projects-img-wrapper {
@@ -139,7 +135,9 @@
     height: 566px;
     padding: 64px;
   }
-
+.projects-lang-item{
+  padding: 18px 18px;
+}
   .projects-lang-item-text {
     font-weight: 500;
     font-size: 16px;

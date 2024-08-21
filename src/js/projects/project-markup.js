@@ -21,7 +21,7 @@ function projectsMarkup(projectsUrl = []) {
           </ul>
           <div class="project-description-wrapper">
             <p class="project-description">
-              Programming Across Borders: Ideas, Technologies, Innovations
+              Programming Across<br />Borders: Ideas,<br />Technologies, Innovations
             </p>
            <a href="https://github.com/aandrea-alex/alex-template-portfolio" class="project-link js-project-link" target="_blank">See project</a>
           </div>
