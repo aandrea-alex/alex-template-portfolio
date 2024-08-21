@@ -33,12 +33,14 @@ export function marqueeInnerMarkup(projectsUrl = []) {
   const lineMarkup1 = createLineMarkup(0);
   const lineMarkup2 = createLineMarkup(2);
   const lineMarkup3 = createLineMarkup(4);
+  const lineMarkup4 = createLineMarkup(6);
 
   return `
     <div class="covers-marquee-inner">
       <ul class="covers-marquee-line">${lineMarkup1}</ul>
       <ul class="covers-marquee-line">${lineMarkup2}</ul>
       <ul class="covers-marquee-line">${lineMarkup3}</ul>
+      <ul class="covers-marquee-line">${lineMarkup4}</ul>
     </div>
   `;
 }
