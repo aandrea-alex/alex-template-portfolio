@@ -36,9 +36,10 @@ function projectsMarkup(projectsUrl = []) {
               type="image/webp"
             />
             <img
-              class="projects-img"
+              class="projects-img lazy"
               src="${url1x}"
               alt="Project 01 main page"
+              loading="lazy"
             />
           </picture>
         </div>

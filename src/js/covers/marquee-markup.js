@@ -21,6 +21,7 @@ export function marqueeInnerMarkup(projectsUrl = []) {
               class="covers-marquee-img"
               src="${url1x}"
               alt="Project image"
+              loading="lazy"
             />
           </picture>
         </li>
