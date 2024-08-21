@@ -4,29 +4,26 @@ const menuBtn = document.querySelector('.js-header-menu-btn');
 const headerMenuRef = document.querySelector('.js-header-menu');
 const headerOrderLinkRef = document.querySelector('.js-header-order-link');
 
-menuBtn && menuBtn.addEventListener('click', handleMenuOpen);
-headerMenuRef && headerMenuRef.addEventListener('click', handleScrollDocument);
+if (menuBtn && headerMenuRef) {
+  menuBtn.addEventListener('click', () => {
+    headerMenuRef.classList.toggle('isopen');
+  });
 
-headerOrderLinkRef &&
-  headerOrderLinkRef.addEventListener('click', handlerOrderLink);
-
-function handleMenuOpen() {
-  headerMenuRef && headerMenuRef.classList.toggle('isopen');
+  headerMenuRef.addEventListener('click', handleLinkClick);
 }
 
-function handleScrollDocument(event) {
-  event.preventDefault();
-  const item = event.target;
-  if (!item.matches('a')) return;
-  const targetId = item.getAttribute('href').substring(1);
-  customScrollToElement(targetId);
-  handleMenuOpen();
+if (headerOrderLinkRef) {
+  headerOrderLinkRef.addEventListener('click', handleLinkClick);
 }
 
-function handlerOrderLink(event) {
+function handleLinkClick(event) {
   event.preventDefault();
-  const item = event.target;
-  if (!item.matches('a')) return;
+  const item = event.target.closest('a');
+  if (!item) return;
   const targetId = item.getAttribute('href').substring(1);
   customScrollToElement(targetId);
+
+  if (headerMenuRef && headerMenuRef.classList.contains('isopen')) {
+    headerMenuRef.classList.remove('isopen');
+  }
 }
