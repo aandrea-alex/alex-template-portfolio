@@ -5,7 +5,7 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 32px;
 }
 
 .about-info-wrapper {
@@ -131,12 +131,17 @@
     padding-top: 43px;
   }
 
+  .about-container {
+    gap: 64px;
+  }
+
   .about-text-wrapper {
     padding-left: 64px;
     padding-right: 64px;
     padding-top: 64px;
     height: 700px;
   }
+  
 
   .about-text {
     font-size: 38px;
