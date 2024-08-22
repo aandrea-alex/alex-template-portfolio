@@ -18,8 +18,10 @@
 .custom-icon-prev {
   width: 24px;
   height: 24px;
-  fill: none;
-  stroke: var(--main-text);
+  /* fill: none;
+  stroke: var(--main-text); */
+  fill: rgba(250, 250, 250, 0.2);
+  stroke: rgb(250, 250, 250);
 }
 
 .custom-btn-next:disabled,
@@ -36,13 +38,13 @@
 
 .custom-btn-next:hover,
 .custom-btn-prev:hover {
-  border: 1px solid rgba(250, 250, 250, 0.6);
+  border: 1px solid rgba(250, 250, 250, 1);
 }
 
 .custom-btn-next:disabled .custom-icon-next,
 .custom-btn-prev:disabled .custom-icon-prev {
   fill: none;
-  stroke: rgba(250, 250, 250, 0.2);
+  stroke: #3b3b3b;
 }
 
 .custom-container-buttons {
