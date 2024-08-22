@@ -3,6 +3,7 @@ import { customScrollToElement } from '../helpers/scroll';
 const menuBtn = document.querySelector('.js-header-menu-btn');
 const headerMenuRef = document.querySelector('.js-header-menu');
 const headerOrderLinkRef = document.querySelector('.js-header-order-link');
+const headerRef = document.querySelector('.header-fixed');
 
 if (menuBtn && headerMenuRef) {
   menuBtn.addEventListener('click', () => {
@@ -27,3 +28,12 @@ function handleLinkClick(event) {
     headerMenuRef.classList.remove('isopen');
   }
 }
+
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY;
+  if (scrollPos > 50) {
+    headerRef.classList.add('onscroll');
+  } else {
+    headerRef.classList.remove('onscroll');
+  }
+});
