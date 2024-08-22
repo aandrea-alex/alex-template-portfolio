@@ -1,5 +1,5 @@
 import marqueeCreate from './marquee-create';
-import { projectsUrl } from '../projects/data';
+import { projectsUrl } from '../helpers/data-projects';
 
 const marqueeRef = document.querySelector('.covers-marquee');
 
