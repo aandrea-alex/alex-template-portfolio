@@ -58,6 +58,11 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
+  animation-play-state: paused;
+}
+
+.animate-covers .covers-marquee-img {
+  animation-play-state: running;
 }
 
 @media screen and (min-resolution: 192dpi) and (max-width: 375px),
