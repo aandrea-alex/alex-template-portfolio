@@ -1,14 +1,20 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Keyboard } from 'swiper/modules';
 
 const swiperSkills = new Swiper('.about-skills-container', {
-  modules: [Navigation],
+  modules: [Navigation, Keyboard],
   slidesPerView: 2,
   spaceBetween: 2,
   loop: true,
+
   navigation: {
     nextEl: '.about-arrow-btn-next',
   },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+
   speed: 700,
   effect: 'slide', // ('slide', 'fade', 'cube', 'coverflow', '')
   breakpoints: {

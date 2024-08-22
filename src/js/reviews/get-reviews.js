@@ -1,5 +1,5 @@
 import reviewsCreate from './reviews-create';
-import { createErrMsg, createOkMsg } from '../helpers/create-msg';
+import { createErrMsg } from '../helpers/create-msg';
 import data from '../../data/reviews.json';
 import { axiosInst } from '../helpers/api';
 
@@ -16,7 +16,6 @@ async function getReviews() {
       if (!reviewsListLen) {
         createErrMsg('Reviews not found');
       } else {
-        createOkMsg('Fetch success!');
         dataList = response.data;
       }
     } else {
@@ -31,7 +30,7 @@ async function getReviews() {
 
 export default getReviews;
 
-// for testing swiper
+// for testing swiper without connection
 export async function getReviewsList() {
   reviewsCreate(data, reviewsListRef);
 }
