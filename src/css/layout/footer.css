@@ -226,7 +226,6 @@
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
-  text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--main-text);
   transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -235,6 +234,22 @@
 
 .footer-scroll-up:hover {
   color: var(--button-text);
+}
+
+.footer-scroll-up::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6px;
+  width: 60%;
+  height: 1.5px;
+  background-color: var(--main-text);
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-scroll-up:hover::after {
+  background-color: var(--button-text);
 }
 
 @media screen and (min-width: 768px) {
@@ -318,8 +333,7 @@
   screen and (min-resolution: 2dppx) and (min-width: 768px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .footer-container {
-    background-image: url('/img/covers/cover-tablet@2x.webp');
-    /* background-image: url('/img/footer/bgr-tablet@2x.webp'); */
+    background-image: url('/img/footer/bgr-tablet@2x.webp');
   }
 }
 
@@ -329,8 +343,7 @@
   }
 
   .footer-container {
-    /* background-image: url('/img/footer/bgr-desktop@1x.webp'); */
-    background-image: url('/img/covers/cover-desktop@1x.webp');
+    background-image: url('/img/footer/bgr-desktop@1x.webp');
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 400px 636px;
@@ -356,7 +369,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .footer-container {
-    /* background-image: url('/img/footer/bgr-desktop@2x.webp'); */
-    background-image: url('/img/covers/cover-desktop@2x.webp');
+    background-image: url('/img/footer/bgr-desktop@2x.webp');
   }
 }

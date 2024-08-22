@@ -18,16 +18,8 @@
 .custom-icon-prev {
   width: 24px;
   height: 24px;
-  fill: rgba(250, 250, 250, 0.2);
-  stroke: rgba(250, 250, 250, 0.2);
-  /* fill: var(--main-text);
-  stroke: var(--main-text); */
-}
-
-.custom-icon-next,
-.custom-icon-prev {
-  fill: rgba(250, 250, 250, 1);
-  stroke: rgba(250, 250, 250, 1);
+  fill: none;
+  stroke: var(--main-text);
 }
 
 .custom-btn-next:disabled,
@@ -49,7 +41,7 @@
 
 .custom-btn-next:disabled .custom-icon-next,
 .custom-btn-prev:disabled .custom-icon-prev {
-  fill: rgba(250, 250, 250, 0.2);
+  fill: none;
   stroke: rgba(250, 250, 250, 0.2);
 }
 

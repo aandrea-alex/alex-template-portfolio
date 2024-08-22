@@ -5,7 +5,7 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 32px;
 }
 
 .about-info-wrapper {
@@ -110,16 +110,21 @@
 .about-arrow-icon {
   width: 100%;
   height: 100%;
-  fill: rgba(250, 250, 250, 0.6);
-  stroke: rgba(250, 250, 250, 0.6);
+  /* fill: rgba(250, 250, 250, 0.6);
+  stroke: rgba(250, 250, 250, 0.6); */
   z-index: 900;
-  transition: fiil 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: fiil 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
+    stroke: #3b3b3b;
+    fill: none;
+    transition: stroke 0.05s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-arrow-btn-next:hover .about-arrow-icon {
-  fill: var(--main-text);
-  stroke: var(--main-text);
+  /* fill: var(--main-text);
+  stroke: var(--main-text); */
+  opacity: 0.5;
+  transition: opacity 0.5s;
 }
 
 .swiper-button-next::after {
@@ -131,12 +136,17 @@
     padding-top: 43px;
   }
 
+  .about-container {
+    gap: 64px;
+  }
+
   .about-text-wrapper {
     padding-left: 64px;
     padding-right: 64px;
     padding-top: 64px;
     height: 700px;
   }
+  
 
   .about-text {
     font-size: 38px;

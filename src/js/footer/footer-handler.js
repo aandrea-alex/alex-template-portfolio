@@ -1,4 +1,4 @@
-import { createErrMsg, createOkMsg } from '../helpers/create-msg';
+// import { createErrMsg, createOkMsg } from '../helpers/create-msg';
 import { customScrollToElement } from '../helpers/scroll';
 import {
   setupCustomInputHandlers,
@@ -71,7 +71,7 @@ async function handleSendMessage(event) {
           response.data,
           document.querySelector('.modal-backdrop')
         );
-        createOkMsg('Success!');
+        // createOkMsg('Success!');
         openModalWindow();
         resetCustomInputValue(emailInputRef);
         resetCustomInputValue(commentInputRef);
@@ -111,7 +111,7 @@ function removeInputsMessages() {
 function showError(spanRef, inputRef, message) {
   spanRef && spanRef.classList.add('visible');
   inputRef && inputRef.classList.add('error');
-  createErrMsg(message);
+  // createErrMsg(message);
 }
 
 changeBtnStatus();
