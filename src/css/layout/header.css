@@ -60,7 +60,7 @@
 .header-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 70%;
   left: 0;
   transform: translateX(-25%);
   flex-direction: column;
@@ -96,6 +96,7 @@
   }
 
   .header-menu-btn {
+    position: relative;
     padding: 0 10px;
     width: 60px;
     height: 39px;
@@ -107,7 +108,6 @@
     font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.02em;
-    text-decoration: underline;
     text-decoration-skip-ink: none;
     color: var(--main-text);
     transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -115,6 +115,22 @@
 
   .header-menu-btn:hover {
     color: var(--button-text);
+  }
+
+  .header-menu-btn::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6px;
+    width: 70%;
+    height: 1.5px;
+    background-color: var(--main-text);
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-menu-btn:hover::after {
+    background-color: var(--button-text);
   }
 
   .header-order-link {
