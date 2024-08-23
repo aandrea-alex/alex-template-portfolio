@@ -1,7 +1,7 @@
 .hero-section {
   height: 812px;
   background-image: url('/img/hero/hero-mobile.png');
-  background-repeat: repeat, no-repeat;
+  background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 100% 100%;
   backdrop-filter: blur(100px);
@@ -89,7 +89,6 @@
   border-color: #fafafa;
 }
 
-
 @media screen and (min-resolution: 192dpi) and (min-width: 375px),
   screen and (min-resolution: 2dppx) and (min-width: 375px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 375px) {
@@ -151,7 +150,6 @@
   }
 }
 
-
 @media screen and (min-width: 1440px) {
   .hero-section {
     height: 900px;
@@ -168,10 +166,7 @@
 @media screen and (min-resolution: 192dpi) and (min-width: 1439px),
   screen and (min-resolution: 2dppx) and (min-width: 1439px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1439px) {
-  .hero-section  {
+  .hero-section {
     background-image: url('/img/hero/hero-desktop@2x.png');
   }
 }
-
-
-
