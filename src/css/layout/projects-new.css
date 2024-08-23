@@ -128,7 +128,7 @@
 
   .projects-container {
     position: relative;
-    padding-bottom: 132px;
+    padding-bottom: 96px;
   }
 
   .projects-item {
@@ -169,10 +169,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .projects-list {
-    margin-bottom: 64px;
-  }
-
   .projects-item {
     height: 625px;
     flex-direction: row;
